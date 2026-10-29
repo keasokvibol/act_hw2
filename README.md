@@ -121,3 +121,5 @@ git push -u origin feature/github-pr-workflow
 After pushing a feature branch, open a pull request on GitHub to propose the changes for merging into `main`.
 
 Webhook test: verifying automatic Jenkins builds after GitHub pushes.
+
+Webhook verification follow-up: October 29, 2026.
