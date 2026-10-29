@@ -1,12 +1,17 @@
-
 <?php
 
 $host = getenv('DB_HOST') ?: 'db';
 $dbname = getenv('DB_NAME') ?: 'iqa_hw2_db';
 $username = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASSWORD') ?: '';
-$charset = 'utf8mb4';
 
+$passwordFile = getenv('DB_PASSWORD_FILE') ?: '';
+if ($passwordFile !== '' && is_readable($passwordFile)) {
+    $password = rtrim(file_get_contents($passwordFile), "\r\n");
+} else {
+    $password = getenv('DB_PASSWORD') ?: '';
+}
+
+$charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
 
 $options = [
