@@ -101,3 +101,27 @@ VIBOL
 ## Year
 
 2026
+
+## Git Workflow
+
+This project uses Git and GitHub for version control.
+
+- `main` is the main project branch.
+- Feature branches are used to organize changes separately from `main`.
+- Pull requests are used to review changes before merging them into `main`.
+- Jenkins is used to build the Docker image, push it to Amazon ECR, and deploy the application to Docker Swarm.
+
+### Feature Branch Example
+
+```bash
+git switch -c feature/github-pr-workflow
+git push -u origin feature/github-pr-workflow
+```
+
+After pushing a feature branch, open a pull request on GitHub to propose the changes for merging into `main`.
+
+Webhook test: verifying automatic Jenkins builds after GitHub pushes.
+
+Webhook verification follow-up: October 29, 2026.
+
+Webhook test after Jenkins branch configuration update.
