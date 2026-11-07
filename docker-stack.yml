@@ -2,7 +2,7 @@ services:
   web:
     image: 148676267942.dkr.ecr.us-east-1.amazonaws.com/act_hw2_iqa_system:latest
     ports:
-      - "9000:80"
+      - "9002:80"
     environment:
       DB_HOST: db
       DB_NAME: iqa_hw2_db
@@ -14,6 +14,10 @@ services:
       - iqa-network
     deploy:
       replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
       restart_policy:
         condition: on-failure
 
